@@ -15,10 +15,10 @@
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/main.css" />
 </head>
 <body>
+<%@ include file="/layouts/header.jsp" %>
 
 <%@ include file="/layouts/body.jsp" %>
 <%@ include file="/layouts/footer.jsp" %>
-<%@ include file="/layouts/header.jsp" %>
 
 <form action="<%= request.getContextPath() %>/bulletin/b_insert/b_insert_action.jsp" method="post">
 <table border="1">

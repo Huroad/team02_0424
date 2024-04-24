@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="header">
-    <a href="/index.jsp"><img
+    <a href="<%= request.getContextPath() %>/index.jsp"><img
             src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/10d7e8b1-9fe1-4c41-aeb7-331f4fb188aa/desbthu-f1421597-f492-40f6-87f5-f7df71b630db.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEwZDdlOGIxLTlmZTEtNGM0MS1hZWI3LTMzMWY0ZmIxODhhYVwvZGVzYnRodS1mMTQyMTU5Ny1mNDkyLTQwZjYtODdmNS1mN2RmNzFiNjMwZGIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.F-Ysq5sbQQCGPRAhFCX8kjHXq6iCKSXO_bfRSXalL9c"
             alt="logo" width="130" height="50"></a>
     <div class="menu">
@@ -17,7 +17,7 @@
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                 <rect id="shape" height="40" width="150"/>
                 <div id="text">
-                    <a href=""><span class="spot"></span>POST</a>
+                    <a href="<%= request.getContextPath() %>/bulletin/b_search/b_search_list.jsp"><span class="spot"></span>POST</a>
                 </div>
             </svg>
         </div>
@@ -25,7 +25,7 @@
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                 <rect id="shape" height="40" width="150"/>
                 <div id="text">
-                    <a href=""><span class="spot"></span>USER</a>
+                    <a href="<%= request.getContextPath() %>/member/m_search/m_search_list.jsp"><span class="spot"></span>USER</a>
                 </div>
             </svg>
         </div>
@@ -47,8 +47,8 @@
         </div>
     </div>
     <div class="login">
-        <a href="../login/login_form.jsp" class="button button--login button--border-thin button--text-thick">Login</a>
-        <a href="member/m_signup" class="button button--login button--border-thin button--text-thick">Signup</a>
+        <a href="<%= request.getContextPath() %>/login/login_form.jsp" class="button button--login button--border-thin button--text-thick">Login</a>
+        <a href="<%= request.getContextPath() %>/member/m_signup" class="button button--login button--border-thin button--text-thick">Signup</a>
     </div>
 </div>
 </body>

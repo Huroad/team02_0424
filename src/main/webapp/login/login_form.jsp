@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/main.css">
 </head>
 <body>
+<%@ include file="/layouts/header.jsp" %>
 <div class="login-wrap">
     <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>

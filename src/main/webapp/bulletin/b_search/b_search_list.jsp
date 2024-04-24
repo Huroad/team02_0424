@@ -42,6 +42,7 @@
 </head>
 
 <body>
+<%@ include file="/layouts/header.jsp" %>
 <%@ include file="b_search_form.jsp" %>
 상품 검색
 <br>
