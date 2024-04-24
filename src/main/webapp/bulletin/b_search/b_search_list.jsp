@@ -245,6 +245,7 @@
                     if(columnsName.equals("b_title")){
             %>
             <td>
+                <!-- TODO: 경로 변경(member -> bulletin) -->
                 <a href="<%= request.getContextPath() %>/member/m_search/m_search_list.jsp?b_code=<%= rs.getString("b_code") %>"><%= columnsValue %></a>
             </td>
             <%
@@ -276,6 +277,7 @@
                     if(columnsName.equals("b_title")){
             %>
             <td>
+                <!-- TODO: 경로 변경(member -> bulletin) -->
                 <a href="<%= request.getContextPath() %>/member/m_search/m_search_list.jsp?b_code=<%= rs.getString("b_code") %>"><%= columnsValue %></a>
             </td>
             <%
