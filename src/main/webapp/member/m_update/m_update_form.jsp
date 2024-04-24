@@ -1,3 +1,4 @@
+<%@ page import="java.sql.SQLException" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 				 pageEncoding="EUC-KR" %>
 <!doctype html>
@@ -9,13 +10,57 @@
 	<title>회원정보 수정</title>
 </head>
 <body>
-<%
-	// Database Connection
-	// 0. 준비
-	String send_id = request.getParameter("send_id");
-	String m_id = "id", m_pw = "pw", m_name = "name", m_email = "email", m_phone = "phone", m_addr = "addr";
-%>
+<!-- 1~3. 드라이버 로드, DB 연결 -->
+<%@ include file="../../WEB-INF/driver/mySqlDriverConn.jsp" %>
 
+<%
+	request.setCharacterEncoding("euc-kr");
+	String send_id = request.getParameter("send_id");
+	String m_id = null;
+	String m_pw = null;
+	String m_level = null;
+	String m_name = null;
+	String m_email = null;
+	String m_phone = null;
+	String m_addr = null;
+
+	try {
+		// 3. 쿼리문 준비
+		String selectQuery = "SELECT * FROM tb02_member WHERE m_id=?";
+		pstmt = conn.prepareStatement(selectQuery);
+
+		int count = 0;
+		pstmt.setString(++count, send_id);
+		System.out.println(pstmt);
+
+		// 4. 쿼리문 실행
+		rs = pstmt.executeQuery();
+
+		// 5. 쿼리 실행결과 사용
+		rs.next();
+		m_id = rs.getString("m_id");
+		m_pw = rs.getString("m_pw");
+		m_level = rs.getString("m_level");
+		m_name = rs.getString("m_name");
+		m_email = rs.getString("m_email");
+		m_phone = rs.getString("m_phone");
+		m_addr = rs.getString("m_addr");
+
+		// 6, 7. 객체 종료
+		if (!rs.isClosed()) {
+			rs.close();
+		}
+		if (!pstmt.isClosed()) {
+			pstmt.close();
+		}
+		if (!conn.isClosed()) {
+			conn.close();
+		}
+	} catch (SQLException e) {
+		System.out.println(e);
+	}
+
+%>
 <%@ include file="/layouts/header.jsp" %>
 <%@ include file="/layouts/body.jsp" %>
 <!-- TODO: 권한 없을 시 알림창 뜨고, 페이지 표시하지 않도록 구현 -->
@@ -68,7 +113,7 @@
 			<tr>
 				<td>주소</td>
 				<td>
-					<input type="text" name="m_" value="<%= m_addr %>">
+					<input type="text" name="m_addr" value="<%= m_addr %>">
 				</td>
 			</tr>
 		</table>
