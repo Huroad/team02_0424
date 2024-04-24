@@ -4,6 +4,7 @@ web/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+pom.xml
 
 ### IntelliJ IDEA ###
 .idea/
