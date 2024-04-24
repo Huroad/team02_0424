@@ -5,7 +5,7 @@
     <head>
         <meta charset="EUC-KR">
         <title>지존팀_회원가입 페이지</title>
-        <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>../../css/main.css" />
+        <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/css/main.css" />
     </head>
     <body>
         <%@ include file="/layouts/header.jsp"%>
