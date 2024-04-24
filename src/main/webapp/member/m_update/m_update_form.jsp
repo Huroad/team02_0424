@@ -70,7 +70,7 @@
 
 <!-- content here -->
 <div id="content">
-	<form>
+	<form action="<%= request.getContextPath() %>/member/m_update/m_update_action.jsp" method="POST">
 		<table>
 			<tr>
 				<td>아이디</td>
@@ -114,6 +114,12 @@
 				<td>주소</td>
 				<td>
 					<input type="text" name="m_addr" value="<%= m_addr %>">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="수정">
+					<input type="button" value="취소" onclick="location.href='<%= request.getContextPath() %>'">
 				</td>
 			</tr>
 		</table>
