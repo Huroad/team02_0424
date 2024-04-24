@@ -30,13 +30,36 @@
 	<td>Title</td>
 	<td><input type="text" name="b_title" size="20"></td>
 <tr>
+
+
+<%
+// session 값 가져오기
+System.out.println(session.getAttribute("S_ID"));
+if(session.getAttribute("S_ID") == null) {
+%>
+<tr>
+	<td>아이디</td>
+	<td><input type="text" readonly value="로그인 해야합니다." name="m_id" size="20"></td>
+<tr>
+
+<% 
+} else {
+%>
+
 <tr>
 	<td>아이디</td>
 	<td><input type="text" name="m_id" size="20"></td>
 <tr>
+
+<%
+}
+%>
+
+
+
 <tr>
 	<td>게시날짜</td>
-	<td><input type="date" name="b_date" size="20" readonly id="b_date"></td>
+	<td><input type="date" name="b_date" size="20"></td>
 <tr>
 <tr>
 	<td>총수량</td>
@@ -55,20 +78,5 @@
 </tr>
 </table>
 </form>
-
-<script>
-    // 현재 날짜를 가져오는 함수
-    function getCurrentDate() {
-        var today = new Date();
-        var year = today.getFullYear();
-        var month = String(today.getMonth() + 1).padStart(2, '0');
-        var day = String(today.getDate()).padStart(2, '0');
-        return year + '-' + month + '-' + day;
-    }
-
-    // 현재 날짜를 입력란에 설정
-    document.getElementById('b_date').value = getCurrentDate();
-</script>
-
 </body>
 </html>
