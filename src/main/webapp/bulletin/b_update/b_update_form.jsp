@@ -91,11 +91,10 @@
         margin-top: 10px;
         cursor: pointer;
     }
-
-
     </style>
 </head>
 <body>
+<%@ include file="/layouts/header.jsp" %>
 <form action="<%= request.getContextPath() %>/bulletin/b_update/b_update_action.jsp" method="post">
     <div class="label-area">
         <label> <input type="hidden" name="b_code"  value="<%= b_code %>" /></label>
